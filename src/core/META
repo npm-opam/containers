@@ -1,0 +1,121 @@
+# OASIS_START
+# DO NOT EDIT (digest: 56ec39bd73892c447789e2116b0f000e)
+version = "0.19"
+description = "A modular standard library focused on data structures."
+requires = "bytes result"
+archive(byte) = "containers.cma"
+archive(byte, plugin) = "containers.cma"
+archive(native) = "containers.cmxa"
+archive(native, plugin) = "containers.cmxs"
+exists_if = "containers.cma"
+package "unix" (
+ version = "0.19"
+ description = "A modular standard library focused on data structures."
+ requires = "bytes unix"
+ archive(byte) = "containers_unix.cma"
+ archive(byte, plugin) = "containers_unix.cma"
+ archive(native) = "containers_unix.cmxa"
+ archive(native, plugin) = "containers_unix.cmxs"
+ exists_if = "containers_unix.cma"
+)
+
+package "top" (
+ version = "0.19"
+ description = "A modular standard library focused on data structures."
+ requires =
+ "compiler-libs.common containers containers.data containers.bigarray containers.string containers.unix containers.sexp containers.iter"
+ archive(byte) = "containers_top.cma"
+ archive(byte, plugin) = "containers_top.cma"
+ archive(native) = "containers_top.cmxa"
+ archive(native, plugin) = "containers_top.cmxs"
+ exists_if = "containers_top.cma"
+)
+
+package "thread" (
+ version = "0.19"
+ description = "A modular standard library focused on data structures."
+ requires = "containers threads"
+ archive(byte) = "containers_thread.cma"
+ archive(byte, plugin) = "containers_thread.cma"
+ archive(native) = "containers_thread.cmxa"
+ archive(native, plugin) = "containers_thread.cmxs"
+ exists_if = "containers_thread.cma"
+)
+
+package "string" (
+ version = "0.19"
+ description = "A modular standard library focused on data structures."
+ requires = "bytes"
+ archive(byte) = "containers_string.cma"
+ archive(byte, plugin) = "containers_string.cma"
+ archive(native) = "containers_string.cmxa"
+ archive(native, plugin) = "containers_string.cmxs"
+ exists_if = "containers_string.cma"
+)
+
+package "sexp" (
+ version = "0.19"
+ description = "A modular standard library focused on data structures."
+ requires = "bytes"
+ archive(byte) = "containers_sexp.cma"
+ archive(byte, plugin) = "containers_sexp.cma"
+ archive(native) = "containers_sexp.cmxa"
+ archive(native, plugin) = "containers_sexp.cmxs"
+ exists_if = "containers_sexp.cma"
+)
+
+package "iter" (
+ version = "0.19"
+ description = "A modular standard library focused on data structures."
+ archive(byte) = "containers_iter.cma"
+ archive(byte, plugin) = "containers_iter.cma"
+ archive(native) = "containers_iter.cmxa"
+ archive(native, plugin) = "containers_iter.cmxs"
+ exists_if = "containers_iter.cma"
+)
+
+package "io" (
+ version = "0.19"
+ description = "A modular standard library focused on data structures."
+ requires = "bytes"
+ archive(byte) = "containers_io.cma"
+ archive(byte, plugin) = "containers_io.cma"
+ archive(native) = "containers_io.cmxa"
+ archive(native, plugin) = "containers_io.cmxs"
+ exists_if = "containers_io.cma"
+)
+
+package "data" (
+ version = "0.19"
+ description = "A modular standard library focused on data structures."
+ requires = "bytes"
+ archive(byte) = "containers_data.cma"
+ archive(byte, plugin) = "containers_data.cma"
+ archive(native) = "containers_data.cmxa"
+ archive(native, plugin) = "containers_data.cmxs"
+ exists_if = "containers_data.cma"
+)
+
+package "bigarray" (
+ version = "0.19"
+ description = "A modular standard library focused on data structures."
+ requires = "containers bigarray bytes"
+ archive(byte) = "containers_bigarray.cma"
+ archive(byte, plugin) = "containers_bigarray.cma"
+ archive(native) = "containers_bigarray.cmxa"
+ archive(native, plugin) = "containers_bigarray.cmxs"
+ exists_if = "containers_bigarray.cma"
+)
+
+package "advanced" (
+ version = "0.19"
+ description = "A modular standard library focused on data structures."
+ requires = "containers sequence"
+ archive(byte) = "containers_advanced.cma"
+ archive(byte, plugin) = "containers_advanced.cma"
+ archive(native) = "containers_advanced.cmxa"
+ archive(native, plugin) = "containers_advanced.cmxs"
+ exists_if = "containers_advanced.cma"
+)
+# OASIS_STOP
+
