@@ -1,0 +1,63 @@
+{
+    "name": "containers-actual",
+    "exportedEnvVars": {
+        "containers_version": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "0.21.0"
+        },
+        "CAML_LD_LIBRARY_PATH": {
+            "global": true,
+            "resolveAsRelativePath": true,
+            "globalCollisionBehavior": "joinPath",
+            "val": "./_build/ocamlfind/lib/stublibs"
+        },
+        "containers_enable": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "enable"
+        },
+        "containers_installed": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "true"
+        },
+        "FINDLIB": {
+            "global": true,
+            "resolveAsRelativePath": true,
+            "globalCollisionBehavior": "joinPath",
+            "val": "./_build/ocamlfind/lib"
+        },
+        "version": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "0.21.0"
+        },
+        "PATH": {
+            "global": true,
+            "resolveAsRelativePath": true,
+            "globalCollisionBehavior": "joinPath",
+            "val": "./_build/ocamlfind/bin"
+        }
+    },
+    "version": "0.21.0",
+    "dependencies": {
+        "@opam-alpha/base-threads": "*",
+        "@opam-alpha/ocamlfind": "*",
+        "dependency-env": "*",
+        "substs": "https://github.com/yunxing/substs.git",
+        "@opam-alpha/ocamlbuild": "*",
+        "@opam-alpha/result": "*",
+        "@opam-alpha/base-bigarray": "*",
+        "@opam-alpha/cppo": "*",
+        "@opam-alpha/base-unix": "*",
+        "nopam": "*",
+        "opam-installer-bin": "https://github.com/yunxing/opam-installer-bin.git"
+    },
+    "scripts": {
+        "postinstall": "eval $(dependencyEnv) && nopam && ./configure --prefix $opam_prefix --${base_threads_enable:-disable}-thread --disable-bench --disable-tests --${base_bigarray_enable:-disable}-bigarray --${sequence_enable:-disable}-advanced --${base_unix_enable:-disable}-unix --enable-docs && make build && make install && (opam-installer --prefix=$opam_prefix || true)"
+    },
+    "peerDependencies": {
+        "@opam-alpha/ocaml": ">= 4.00.0"
+    }
+}
